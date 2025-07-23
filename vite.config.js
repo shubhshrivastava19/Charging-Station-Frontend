@@ -16,10 +16,3 @@ export default defineConfig({
     },
   },
 })
-
-// vue.config.js
-module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? 'Charging-Station-Frontend'
-    : './'
-}
