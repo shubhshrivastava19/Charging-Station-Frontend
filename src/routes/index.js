@@ -6,7 +6,7 @@ import DashboardPage from '@/components/Dashboard.vue'
 const routes = [
   { path: '/', component: LoginPage },
   { path: '/Register', component: RegisterPage },
-  { path: '/dashboard', component: DashboardPage },
+  { path: '/dashboard', component: RegisterPage },
 ]
 
 const router = createRouter({
@@ -14,4 +14,4 @@ const router = createRouter({
   routes
 })
 
-export default router
+export default router;
