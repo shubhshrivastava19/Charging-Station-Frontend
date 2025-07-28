@@ -46,6 +46,11 @@
         <input v-model="form.connectorType" type="text" placeholder="Connector Type" required />
       </div>
       <button type="submit" class="submit-btn">Add Charger</button>
+       <button  @click="for10Sec" class="submit-btn ">
+        
+        {{isDisabled ? `Please wait ${counter} seconds` : 'Add Charger' }}
+        
+      </button>
     </form>
 
     <!-- Table -->
@@ -87,6 +92,10 @@ import axios from 'axios'
 import Map from './Map.vue'
 import { useRouter } from 'vue-router'
 import { computed } from 'vue'
+const isDisable=ref(false)
+const counter=ref(10)
+
+let interval
 
 const filters = ref({
   search: '',
@@ -94,6 +103,18 @@ const filters = ref({
   powerOutput: '',
   connectorType: ''
 })
+
+for10Sec=()=> {
+  
+ isDisable.value=true
+ counter.value=10
+ interval=setInterval(()=>{
+   counter.value--
+   if(counter.value===0){
+     isDisable.value=false
+     clearInterval(interval)  }},10000)
+
+}
 
 const filteredChargers = computed(() => {
   return chargers.value.filter(charger => {
