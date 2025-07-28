@@ -61,7 +61,7 @@ const login = async () => {
   try {
     const res = await API.post('/auth/login', { email: email.value, password: password.value });
     localStorage.setItem('token', res.data.token);
-    router.push('/dashboard');
+    router.push('/Dashboard');
   } catch (err) {
     error.value = 'Invalid credentials';
     alert('invalid credentials ... please try again !! , or register if you are new');
