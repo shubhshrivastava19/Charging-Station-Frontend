@@ -46,7 +46,7 @@
         <input v-model="form.connectorType" type="text" placeholder="Connector Type" required />
       </div>
       <button type="submit" class="submit-btn">Add Charger</button>
-       <button  @click="for10Sec" class="submit-btn ">
+       <button  @click="for10Sec" class="">
         
         {{isDisabled ? `Please wait ${counter} seconds` : 'Add Charger' }}
 
