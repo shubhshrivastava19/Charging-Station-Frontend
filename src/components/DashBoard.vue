@@ -49,7 +49,7 @@
        <button  @click="for10Sec" class="submit-btn ">
         
         {{isDisabled ? `Please wait ${counter} seconds` : 'Add Charger' }}
-        
+
       </button>
     </form>
 
@@ -104,7 +104,7 @@ const filters = ref({
   connectorType: ''
 })
 
-for10Sec=()=> {
+function for10Sec () {
   
  isDisable.value=true
  counter.value=10
