@@ -58,7 +58,7 @@ export default {
   methods: {
     async register() {
       try {
-        const res = await axios.post('http://localhost:3009/api/auth/register', {
+        const res = await axios.post('https://chargingstation-backend-td8a.onrender.com/api/auth/register', {
           name: this.name,
           email: this.email,
           password: this.password

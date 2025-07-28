@@ -148,7 +148,7 @@ navigator.geolocation.getCurrentPosition((position) => {
 // Fetch chargers
 const getChargers = async () => {
   try {
-      const res = await axios.get('http://localhost:3009/api/stations/',{
+      const res = await axios.get('https://chargingstation-backend-td8a.onrender.com/api/stations/',{
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token')}`
     }
@@ -166,13 +166,13 @@ onMounted(getChargers)
 
 const saveCharger = async () => {
   if (isEditing.value) {
-    await axios.put(`http://localhost:3009/api/stations/${form.value._id}`, form.value,{
+    await axios.put(`https://chargingstation-backend-td8a.onrender.com/api/stations/${form.value._id}`, form.value,{
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token')}`
     }
   })
   } else {
-    await axios.post('http://localhost:3009/api/stations/createStation', form.value,{
+    await axios.post('https://chargingstation-backend-td8a.onrender.com/api/stations/createStation', form.value,{
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token')}`
     }
@@ -188,7 +188,7 @@ const editCharger = (charger) => {
 }
 
 const deleteCharger = async (id) => {
-  await axios.delete(`http://localhost:3009/api/stations/${id}`,{
+  await axios.delete(`https://chargingstation-backend-td8a.onrender.com/api/stations/${id}`,{
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token')}`
     }
